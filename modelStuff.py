@@ -142,31 +142,7 @@ def cvarOfSum(lister, alpha = .1):
 
 node1 = Node(posStates, children, actions, cvarOfSum, "1")
 
-node3 = Node(posStates, children, actions, cvarOfSum, "3")
 
-actions2 = {}
-actions2['1']=[(100,{node3: {'1':.75, '2':.25}},"hello")]
-actions2['2']=[(10,{node3: {'1':.75, '2':.25}},"hello")]
-
-node2 = Node(posStates, [node3], actions2, cvarOfSum, "2")
-
-actions0 = {}
-actions0['1']=[(10,{node1: {'1':.75, '2':.25}, node2: {'1':.25, '2':.75}},"act"),(69,{node1: {'1':.1, '2':.9}, node2: {'1':.1, '2':.9}},"fact")]
-actions0['2']=[(11,{node1: {'1':.25, '2':.75}, node2: {'1':.25, '2':.75}},"ji")]
-
-node0 = Node(posStates, [node1, node2], actions0, cvarOfSum, "0")
-
-
-
-
-val, act = node0.getVAMe()
-print(val)
-
-
-#prints polciy
-for key in act.keys():
-    print(key.label + ", " + str(act[key]))
-#print(noder.getVAMe()[0])
 
 
 
